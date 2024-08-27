@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import { Outlet, Navigate } from "react-router-dom";
 
@@ -31,7 +30,7 @@ export function AnonymousRoute() {
 }
 
 export function isLoggedIn() {
-  const token = Cookies.get("stock-site-token");
+  const token = localStorage.stock_site_token;
   if (token == null) return false;
 
   let decodedToken = jwtDecode(token);

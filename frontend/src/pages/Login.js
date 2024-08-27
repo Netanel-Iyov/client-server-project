@@ -19,7 +19,6 @@ const Login = () => {
     setError(null);
     const response = await fetch(`${baseURL}/api/user/login`, {
       method: "POST",
-      credentials: "include", // This is crucial for sending/receiving cookies
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
@@ -29,7 +28,7 @@ const Login = () => {
       setError(json.error);
     }
     if (response.ok) {
-      console.log(json);
+      localStorage.setItem("stock_site_token", json.token);
       window.location.href = "/dashboard"; // Redirect to Dashboard
     }
 

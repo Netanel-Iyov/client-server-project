@@ -11,7 +11,6 @@ exports.verifyToken = (req, res, next) => {
     req.user = user;
     next();
   } catch (err) {
-    res.clearCookie("stock-site-token");
     return res.status(401).send({ auth: false, message: "Token expired." });
   }
 };

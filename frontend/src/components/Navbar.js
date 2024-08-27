@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Container, Navbar as BootstrapNavbar, Nav } from "react-bootstrap";
-import Cookies from "js-cookie"; // Import Cookies for managing cookies
 import { isLoggedIn } from "../components/utils";
 import "../styles/Navbar.css";
 
@@ -8,8 +7,8 @@ const Navbar = () => {
   const navigate = useNavigate(); // Hook for navigation
 
   const handleLogout = () => {
-    // Remove the token from cookies
-    Cookies.remove("stock-site-token");
+    // Remove the token from local storage
+    localStorage.removeItem('stock_site_token');
 
     // Optionally: Implement any other logout logic here
 
