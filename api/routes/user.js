@@ -14,7 +14,9 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign(userToHash, JWT_KEY, { expiresIn: "30m" });
 
     res.header("Access-Control-Allow-Credentials", true);
-    res.cookie("stock-site-token", token, { sameSite: "None", domain: ".domain.com" });
+
+    const oneDay = 60 * 60 * 24 * 1000
+    res.cookie("stock-site-token", token, { sameSite: "None", domain: ".domain.com", maxAge: oneDay});
 
     res.status(200).json({ email: email, auth: true });
   } catch (error) {
