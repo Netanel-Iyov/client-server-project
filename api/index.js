@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 app.use(cookieParser());
 
-router.get("/", async (req, res) => {
+app.get("/", async (req, res) => {
   res.status(200).json({ message: "Welcome To Crypto Watcher Api" });
 });
 
