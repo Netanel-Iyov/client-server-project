@@ -1,5 +1,16 @@
 {
-    "rewrites":  [
-      {"source": "/(.*)", "destination": "/server.js"}
+    "version": 2,
+    "name": "crypto-watcher-api",
+    "builds": [
+      {
+        "src": "/backend/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/backend/server.js"
+      }
     ]
   }
