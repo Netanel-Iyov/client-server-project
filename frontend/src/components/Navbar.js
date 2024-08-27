@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <BootstrapNavbar bg="light" expand="lg" className="mb-4">
       <Container className="mt-1 p-1">
-        <BootstrapNavbar.Brand href="\homepage">
+        <BootstrapNavbar.Brand href="/dashboard">
           Crypto Site
         </BootstrapNavbar.Brand>
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
@@ -29,10 +29,14 @@ const Navbar = () => {
           <Nav className="ml-auto">
             {loggedIn ? (
               <>
+                <Nav.Link as={Link} to="/dashboard">
+                  Home Page
+                </Nav.Link>
                 <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                 <Nav.Link as={Link} to="/contact-us">
                   Contact Us
                 </Nav.Link>
+
               </>
             ) : (
               <>

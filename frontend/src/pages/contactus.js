@@ -17,16 +17,14 @@ const ContactUs = () => {
   return (
     <Container className="mt-4 mb-4">
       <Row className="d-flex justify-content-center">
-        <Col md={5}>
+        <Col md={6}>
           <ContactForm />
         </Col>
-      </Row>
 
-      {/* <Row className="d-flex justify-content-center">
         <Col md={5}>
           <ContactInfo />
         </Col>
-      </Row> */}
+      </Row>
     </Container>
   );
 };
@@ -78,9 +76,7 @@ const ContactForm = () => {
       );
   };
 
-  const handleSupportClick = () => {
-    alert("Support Contact: support@example.com");
-  };
+
 
   return (
     <Form ref={form} id="contactForm" onSubmit={handleSubmit}>
@@ -128,6 +124,9 @@ const ContactForm = () => {
 };
 
 const ContactInfo = () => {
+  const handleSupportClick = () => {
+    window.location.href = "mailto:crypto-watcher@gmail.com";
+  };
   return (
     <Card className="text-center my-2">
       <Card.Body>
@@ -135,11 +134,22 @@ const ContactInfo = () => {
         <Card.Text>
           If you have any questions, feel free to reach out to us!
         </Card.Text>
+        <br/>
         <div className="justify-content-center flex-wrap">
           <div className="p-2">
             <h4>Email Us:</h4>
             <p>crypto-watcher@gmail.com</p>
+            <p>Or click here:</p>
+            <Button
+                variant="secondary"
+                type="button"
+                className="mt-3 ms-2"
+                onClick={handleSupportClick}
+            >
+                Contact Support
+            </Button>
           </div>
+          <br/>
           <div className="p-2">
             <h4>Call Us:</h4>
             <p>+972 123456789</p>
