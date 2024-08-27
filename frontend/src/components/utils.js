@@ -23,7 +23,7 @@ export function formatPrice(number) {
 }
 
 export function PrivateRoute() {
-  return isLoggedIn() ? <Outlet /> : <Navigate to="/log-in" replace />;
+  return isLoggedIn() ? <Outlet /> : <Navigate to="/sign-in" replace />;
 }
 
 export function AnonymousRoute() {

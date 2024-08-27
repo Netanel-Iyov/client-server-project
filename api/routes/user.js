@@ -13,6 +13,7 @@ router.post("/login", async (req, res) => {
     const userToHash = { email: user.email };
     const token = jwt.sign(userToHash, JWT_KEY, { expiresIn: "30m" });
 
+    res.header("Access-Control-Allow-Credentials", true);
     res.cookie("stock-site-token", token);
     res.status(200).json({ email: email, auth: true });
   } catch (error) {
