@@ -3,7 +3,7 @@
     "name": "crypto-watcher-api",
     "builds": [
       {
-        "src": "/backend/server.js",
+        "src": "server.js",
         "use": "@vercel/node"
       }
     ],
