@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import "../styles/signup.css";
 
+const baseURL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:4000"
+    : process.env.REACT_APP_BASE_URL;
+
+
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,7 +41,7 @@ const Signup = () => {
       return;
     }
 
-    const response = await fetch("/api/user/signup", {
+    const response = await fetch(`${baseURL}/api/user/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
