@@ -1,16 +1,15 @@
 {
     "version": 2,
-    "name": "crypto-watcher-api",
     "builds": [
-      {
-        "src": "server.js",
-        "use": "@vercel/node"
-      }
+     {
+         "src": "./index.js",
+         "use": "@vercel/node"
+     }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/backend/server.js"
-      }
+     {
+         "src": "/(.*)",
+         "dest": "/"
+     }
     ]
-  }
+ }
